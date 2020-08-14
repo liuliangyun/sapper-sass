@@ -1,0 +1,29 @@
+@import '_responsive';
+@import '_variables';
+
+@include breakpoint(mobile) {
+  .mobile-block {
+    display: block !important;
+  }
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+@include breakpoint(tablet) {
+  .tablet-block {
+    display: block!important;
+  }
+  .tablet-hidden {
+    display: none!important;
+  }
+}
+
+@include breakpoint(desktop) {
+  .desktop-block {
+    display: block !important;
+  }
+  .desktop-hidden {
+    display: none !important;
+  }
+}
