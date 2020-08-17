@@ -6,6 +6,7 @@
   @import './scss/main.scss';
   
   .hero {
+    margin-top: -24px;
     background: #fff;
     text-align: center;
     a {

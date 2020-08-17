@@ -12,6 +12,14 @@ $radius: 2px !default;
 $shadow: rgba(0, 0, 0, 0.1) 0 1px 1px 0 !default;
 $hover: rgba(0, 0, 0, 0.2) 0 1px 10px 0 !default;
 
+/* Layout */
+$header: 80px;
+$navbar: 55px;
+$panel: 30%;
+$wrapper: 768px;
+$overlay: 480px;
+$thumbnail: 150px;
+
 // display
 .block {
   display: block;
@@ -29,3 +37,16 @@ $hover: rgba(0, 0, 0, 0.2) 0 1px 10px 0 !default;
 .absolute {
   position: absolute;
 }
+
+/* Colors */
+$apron-green: #00A862;
+$red: #e75b52;
+$natural-grey: #f7f7f7;
+$ceramic: #EDEBE9;
+$cream: #F3F1E7;
+$green: #00653E;
+$gold: #C2A661;
+$warm-black: #2D2926;
+$warmer-black: #3D3935;
+$welcome-grey: #e0e0e0;
+$light-yellow: #efebe8;

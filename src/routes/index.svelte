@@ -1,6 +1,7 @@
 <script>
 	import CampaignHero from '../components/CampaignHero/hero.svelte';
 	import FeaturedItems from "../components/FeaturedItems/itemlist.svelte";
+	import LtoItems from "../components/LtoItems/itemlist.svelte";
 
 	let hero = {
 		url: "#lto-items",
@@ -89,11 +90,273 @@
 				伴有麦芽般的底韵，口感平衡。`
 		}
 	];
+
+	let ltoItems = [
+		{
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/1.jpg',
+			image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/1.jpg',
+			name: '百香果桃桃茶云乌龙'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/2.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/2.jpg',
+			name: '火龙果番石榴茶云乌龙'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/3.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/3.jpg',
+			name: '玫香葡萄茶云乌龙'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/4.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/4.jpg',
+			name: '果香植物酸奶巴菲杯'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/5.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/5.jpg',
+			name: '果莓植物酸奶巴菲杯'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/6.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/6.jpg',
+			name: '有料小软软'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/7.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/7.jpg',
+			name: '云朵布里欧'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer2/small-pics/5.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer2/small-pics/5.jpg',
+			name: '哥斯达黎加蜜处理咖啡'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer2/small-pics/6.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer2/small-pics/6.jpg',
+			name: '卢旺达阿巴坤达卡瓦咖啡'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer2/small-pics/7.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer2/small-pics/7.jpg',
+			name: '卢旺达穆洪多咖啡'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/8.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/8.jpg',
+			name: '星巴克®单一产地系列卢旺达咖啡豆'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/9.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/9.jpg',
+			name: '星巴克®东非大裂谷综合咖啡豆'
+		},
+    {
+			image_desktop: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/10.jpg',
+      image_mobile: 'https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/10.jpg',
+			name: '活力夏日会员星礼包'
+		}
+	];
 </script>
+
+<style lang="scss">
+	@import './scss/main.scss';
+
+	:global(body) {
+		margin: 0px;
+		font-family: "Gotham", Helvetica, Arial, PingFangSC-Regular, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		-webkit-font-smoothing: antialiased;
+		letter-spacing: 0.4px;
+		color: rgba(0, 0, 0, 0.87);
+		background-color: rgb(247,247,247);
+	}
+
+	:global(p) {
+		margin: 0 0 24px;
+	}
+
+	#content {
+		position: relative;
+		overflow: hidden;
+
+		@include breakpoint(up_to_desktop) {
+			padding-bottom: $space;
+			padding-top: $space;
+			// for frap button
+			body.page-menu & {
+				padding-bottom: 120px;
+			}
+		}
+		@include breakpoint(desktop) {
+			left: auto;
+			margin-left: $panel;
+			padding-bottom: $space;
+			padding-top: $space;
+			width: 100 - $panel;
+		} 
+		//layout change on mobile for box with submit button
+		@include breakpoint(mobile) {
+			padding-bottom: $navbar;
+			//iphoneX hack
+			@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+				padding-bottom: $navbar + 15px;
+			}
+		}
+
+		hr {
+			@include clearfix;
+			margin: 1.5*$space auto; // max-width: $wrapper - 2*$space/1.5;
+		}
+		.section {
+			clear: both;
+			@include clearfix;
+			@include breakpoint(mobile) {
+				padding-bottom: $space/2;
+				padding-top: $space/2;
+				&:first-child {
+					padding-top: 0;
+				}
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+			@include breakpoint(tablet) {
+				padding-bottom: 1.5*$space/2;
+				padding-top: 1.5*$space/2;
+				&:first-child {
+					padding-top: 0;
+				}
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+			// for frap button
+			&-legal {
+				padding-bottom: 60px !important;
+			}
+			&-faq,
+			&-help {
+				padding-bottom: 150px !important; 
+			}
+		}
+		.teaser {
+			color: inherit;
+			@include clearfix;
+			.preview {
+				float: left;
+			}
+			.content {
+				h2,
+				h3 {
+					margin-bottom: $space/2;
+				}
+			}
+			@include breakpoint(mobile) {
+				.content {
+					margin-left: 4*$space + 1.5*$space/4;
+				}
+				.preview {
+					width: 4*$space;
+				}
+			}
+			@include breakpoint(tablet) {
+				.content {
+					margin-left: 6*$space + $space/2;
+				}
+				.preview {
+					width: 6*$space;
+				}
+			}
+			&.mini {
+				@include breakpoint(mobile) {
+					.content {
+						margin-left: 3*$space + 1.5*$space/4;
+					}
+					.preview {
+						width: 3*$space;
+					}
+				}
+				@include breakpoint(tablet) {
+					.content {
+						margin-left: 4*$space + $space/2;
+					}
+					.preview {
+						width: 4*$space;
+					}
+				}
+			}
+			&.reverse {
+				.preview {
+					float: right;
+				}
+				.content {
+					margin-left: 0;
+				}
+				@include breakpoint(mobile) {
+					.content {
+						margin-right: 4*$space + 1.5*$space/4;
+					}
+				}
+				@include breakpoint(tablet) {
+					.content {
+						margin-right: 6*$space + $space/2;
+					}
+				}
+				&.mini {
+					@include breakpoint(mobile) {
+						.content {
+							margin-right: 3*$space + 1.5*$space/4;
+						}
+					}
+					@include breakpoint(tablet) {
+						.content {
+							margin-right: 4*$space + $space/2;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//hack for english layout
+	.lang-en {
+		#content {
+			@include breakpoint(mobile) {
+				padding-bottom: 67px;
+				//iphoneX hack
+				@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+					padding-bottom: 82px;
+				}
+			}
+		}
+	}
+
+	.tag_ad {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		padding: 0px $space/4;
+		color: #fff;
+		background-color: #000;
+		font-size: 12px;
+		line-height: 180%;
+		opacity: 0.6;
+		border-radius: 2px;
+		z-index: 200;
+	}
+</style>
 
 <svelte:head>
 	<title>Sapper project template</title>
 </svelte:head>
 
-<CampaignHero {hero} />
-<FeaturedItems {featuredItems} />
+<!-- Page content -->
+<section id='content'>
+	<span class='tag_ad'>广告</span>
+	<CampaignHero {hero} />
+	<FeaturedItems {featuredItems} />
+	<LtoItems {ltoItems} />
+</section>

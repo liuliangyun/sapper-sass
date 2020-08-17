@@ -1,5 +1,7 @@
 @import '_responsive';
 @import '_variables';
+@import '_clearfix';
+@import '_grid';
 
 @include breakpoint(mobile) {
   .mobile-block {
@@ -27,3 +29,182 @@
     display: none !important;
   }
 }
+
+.grid {
+  >* {
+    position: relative;
+  }
+  @include breakpoint(mobile) {
+    @include grid(2);
+  }
+  @include breakpoint(only_tablet) {
+    @include grid(3);
+  }
+  @include breakpoint(desktop) {
+    @include grid(4);
+  }
+  &.columns-2 {
+    @include breakpoint(mobile) {
+      @include grid(1);
+    }
+    @include breakpoint(tablet) {
+      @include grid(2);
+    }
+  }
+  &.columns-3 {
+    @include breakpoint(mobile) {
+      @include grid(1);
+    }
+    @include breakpoint(only_tablet) {
+      @include grid(2);
+    }
+    @include breakpoint(desktop) {
+      @include grid(3);
+    }
+  }
+  &.columns-4 {
+    @include breakpoint(mobile) {
+      @include grid(2);
+    }
+    @include breakpoint(only_tablet) {
+      @include grid(4);
+    }
+  }
+  &.columns-5 {
+    @include breakpoint(mobile) {
+      @include grid(3);
+    }
+    @include breakpoint(only_tablet) {
+      @include grid(4);
+    }
+    @include breakpoint(desktop) {
+      @include grid(5);
+    }
+  }
+  &.padded,
+  &.padded-1 {
+    margin: -$space/4 0;
+    &.columns-2,
+    &.columns-3 {
+      margin: -$space/4;
+    }
+    >* {
+      padding: $space/4;
+    }
+    &.margin {
+      margin-bottom: $space - $space/4;
+    }
+  }
+  &.padded-2 {
+    margin: -$space/2;
+    &.columns-2,
+    &.columns-3 {
+      margin: -$space/2;
+    }
+    >* {
+      padding: $space/2;
+    }
+    &.margin {
+      margin-bottom: $space - $space/2;
+    }
+  }
+  &.padded-3 {
+    margin: -$space/1.5;
+    &.columns-2,
+    &.columns-3 {
+      margin: -$space/1.5;
+    }
+    >* {
+      padding: $space/1.5;
+    }
+    &.margin {
+      margin-bottom: $space - $space/1.5;
+    }
+  }
+  &.padded-4 {
+    margin: -$space;
+    &.columns-2,
+    &.columns-3 {
+      margin: -$space;
+    }
+    >* {
+      padding: $space;
+    }
+    &.margin {
+      margin-bottom: $space - $space;
+    }
+  }
+  .thumbnail {
+    display: block;
+  }
+
+  .mixology-grid-item {
+    @include breakpoint(desktop) {
+      width: 33.33%;
+
+      &:nth-child(4n + 1){
+        clear: unset;
+      }
+    }
+  }
+}
+
+:global(body) {
+  font-family: "Gotham", Helvetica, Arial, PingFangSC-Regular, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6; 
+  background: rgb(247,247,247);
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.4px;
+}
+
+a {
+  color: $apron-green;
+  &:hover {
+    color: shade($apron-green, 10%);
+    text-decoration: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+  font-family: "Gotham", Helvetica, Arial, PingFangSC-Regular, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-weight: bold;
+  margin: 0 0 24px;
+}
+
+h1 {
+  font-size: 26px;
+  font-size: 2.6rem; 
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 18px;
+  line-height: 140%;
+  font-weight: 400;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: 17px;
+  font-size: 1.7rem; 
+}
+
+p,
+pre {
+  margin: 0 0 24px; 
+}
+
+
