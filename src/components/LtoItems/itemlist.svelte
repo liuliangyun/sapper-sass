@@ -62,6 +62,172 @@
 <style lang="scss">
   @import './scss/main.scss';
 
+  @include breakpoint(mobile) {
+    .mobile-block {
+      display: block !important;
+    }
+    .mobile-hidden {
+      display: none !important;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    .tablet-block {
+      display: block!important;
+    }
+    .tablet-hidden {
+      display: none!important;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    .desktop-block {
+      display: block !important;
+    }
+    .desktop-hidden {
+      display: none !important;
+    }
+  }
+
+  a {
+    color: $apron-green;
+    &:hover {
+      color: shade($apron-green, 10%);
+      text-decoration: none;
+    }
+  }
+
+  h2 {
+    color: $black-1;
+    font-size: 22px;
+    margin: 0 0 18px;
+    line-height: 140%;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0 0 24px; 
+  }
+
+  .grid {
+    >* {
+      position: relative;
+    }
+    @include breakpoint(mobile) {
+      @include grid(2);
+    }
+    @include breakpoint(only_tablet) {
+      @include grid(3);
+    }
+    @include breakpoint(desktop) {
+      @include grid(4);
+    }
+    &.columns-2 {
+      @include breakpoint(mobile) {
+        @include grid(1);
+      }
+      @include breakpoint(tablet) {
+        @include grid(2);
+      }
+    }
+    &.columns-3 {
+      @include breakpoint(mobile) {
+        @include grid(1);
+      }
+      @include breakpoint(only_tablet) {
+        @include grid(2);
+      }
+      @include breakpoint(desktop) {
+        @include grid(3);
+      }
+    }
+    &.columns-4 {
+      @include breakpoint(mobile) {
+        @include grid(2);
+      }
+      @include breakpoint(only_tablet) {
+        @include grid(4);
+      }
+    }
+    &.columns-5 {
+      @include breakpoint(mobile) {
+        @include grid(3);
+      }
+      @include breakpoint(only_tablet) {
+        @include grid(4);
+      }
+      @include breakpoint(desktop) {
+        @include grid(5);
+      }
+    }
+    &.padded,
+    &.padded-1 {
+      margin: -$space/4 0;
+      &.columns-2,
+      &.columns-3 {
+        margin: -$space/4;
+      }
+      >* {
+        padding: $space/4;
+      }
+      &.margin {
+        margin-bottom: $space - $space/4;
+      }
+    }
+    &.padded-2 {
+      margin: -$space/2;
+      &.columns-2,
+      &.columns-3 {
+        margin: -$space/2;
+      }
+      >* {
+        padding: $space/2;
+      }
+      &.margin {
+        margin-bottom: $space - $space/2;
+      }
+    }
+    &.padded-3 {
+      margin: -$space/1.5;
+      &.columns-2,
+      &.columns-3 {
+        margin: -$space/1.5;
+      }
+      >* {
+        padding: $space/1.5;
+      }
+      &.margin {
+        margin-bottom: $space - $space/1.5;
+      }
+    }
+    &.padded-4 {
+      margin: -$space;
+      &.columns-2,
+      &.columns-3 {
+        margin: -$space;
+      }
+      >* {
+        padding: $space;
+      }
+      &.margin {
+        margin-bottom: $space - $space;
+      }
+    }
+    .thumbnail {
+      display: block;
+    }
+
+    .mixology-grid-item {
+      @include breakpoint(desktop) {
+        width: 33.33%;
+
+        &:nth-child(4n + 1){
+          clear: unset;
+        }
+      }
+    }
+  }
+
   // Wrapping body for centering and max-width
   .wrapper {
     box-sizing: border-box;
@@ -85,12 +251,6 @@
     }
   }
 
-  .wrapper-mobile {
-    @include breakpoint(up_to_desktop) {
-      padding-left: $space;
-      padding-right: $space;
-    }
-  }
   #lto-items {
     padding-top: 40px;
     text-align: center;

@@ -20,24 +20,6 @@ $wrapper: 768px;
 $overlay: 480px;
 $thumbnail: 150px;
 
-// display
-.block {
-  display: block;
-}
-
-.hidden {
-  display: none!important;
-}
-
-// position
-.relative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
 /* Colors */
 $apron-green: #00A862;
 $red: #e75b52;
@@ -50,3 +32,20 @@ $warm-black: #2D2926;
 $warmer-black: #3D3935;
 $welcome-grey: #e0e0e0;
 $light-yellow: #efebe8;
+
+$white: #FFF;
+$white-1: $white;
+$white-2: rgba(255,255,255,0.7);
+$white-3: rgba(255,255,255,0.5);
+$white-4: rgba(255,255,255,0.3);
+$white-5: rgba(255,255,255,0.12);
+
+$black: #000;
+$black-1: $black;
+$black-2: rgba(0,0,0,0.87);
+$black-3: rgba(0,0,0,0.56);
+$black-4: rgba(0,0,0,0.38);
+$black-5: rgba(0,0,0,0.26);
+$black-6: rgba(0,0,0,0.12);
+$ms-black-6: #edebe9;
+$black-7: rgba(0,0,0,0.05);

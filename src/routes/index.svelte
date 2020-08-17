@@ -162,22 +162,17 @@
 
 <style lang="scss">
 	@import './scss/main.scss';
-
 	:global(body) {
-		margin: 0px;
 		font-family: "Gotham", Helvetica, Arial, PingFangSC-Regular, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 		font-size: 16px;
-		font-weight: 400;
+		font-size: 1.6rem;
+		font-weight: normal;
+		line-height: 1.6; 
+		background: rgb(247,247,247);
+		color: rgba(0, 0, 0, 0.87);
 		-webkit-font-smoothing: antialiased;
 		letter-spacing: 0.4px;
-		color: rgba(0, 0, 0, 0.87);
-		background-color: rgb(247,247,247);
 	}
-
-	:global(p) {
-		margin: 0 0 24px;
-	}
-
 	#content {
 		position: relative;
 		overflow: hidden;
@@ -204,11 +199,6 @@
 			@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
 				padding-bottom: $navbar + 15px;
 			}
-		}
-
-		hr {
-			@include clearfix;
-			margin: 1.5*$space auto; // max-width: $wrapper - 2*$space/1.5;
 		}
 		.section {
 			clear: both;
@@ -242,110 +232,6 @@
 				padding-bottom: 150px !important; 
 			}
 		}
-		.teaser {
-			color: inherit;
-			@include clearfix;
-			.preview {
-				float: left;
-			}
-			.content {
-				h2,
-				h3 {
-					margin-bottom: $space/2;
-				}
-			}
-			@include breakpoint(mobile) {
-				.content {
-					margin-left: 4*$space + 1.5*$space/4;
-				}
-				.preview {
-					width: 4*$space;
-				}
-			}
-			@include breakpoint(tablet) {
-				.content {
-					margin-left: 6*$space + $space/2;
-				}
-				.preview {
-					width: 6*$space;
-				}
-			}
-			&.mini {
-				@include breakpoint(mobile) {
-					.content {
-						margin-left: 3*$space + 1.5*$space/4;
-					}
-					.preview {
-						width: 3*$space;
-					}
-				}
-				@include breakpoint(tablet) {
-					.content {
-						margin-left: 4*$space + $space/2;
-					}
-					.preview {
-						width: 4*$space;
-					}
-				}
-			}
-			&.reverse {
-				.preview {
-					float: right;
-				}
-				.content {
-					margin-left: 0;
-				}
-				@include breakpoint(mobile) {
-					.content {
-						margin-right: 4*$space + 1.5*$space/4;
-					}
-				}
-				@include breakpoint(tablet) {
-					.content {
-						margin-right: 6*$space + $space/2;
-					}
-				}
-				&.mini {
-					@include breakpoint(mobile) {
-						.content {
-							margin-right: 3*$space + 1.5*$space/4;
-						}
-					}
-					@include breakpoint(tablet) {
-						.content {
-							margin-right: 4*$space + $space/2;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	//hack for english layout
-	.lang-en {
-		#content {
-			@include breakpoint(mobile) {
-				padding-bottom: 67px;
-				//iphoneX hack
-				@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-					padding-bottom: 82px;
-				}
-			}
-		}
-	}
-
-	.tag_ad {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		padding: 0px $space/4;
-		color: #fff;
-		background-color: #000;
-		font-size: 12px;
-		line-height: 180%;
-		opacity: 0.6;
-		border-radius: 2px;
-		z-index: 200;
 	}
 </style>
 
@@ -355,7 +241,6 @@
 
 <!-- Page content -->
 <section id='content'>
-	<span class='tag_ad'>广告</span>
 	<CampaignHero {hero} />
 	<FeaturedItems {featuredItems} />
 	<LtoItems {ltoItems} />
