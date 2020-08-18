@@ -12,7 +12,11 @@
 	
 	export function getComponentProps(component, context) {
 		let componentInfo = context.components.find((c) => c.id === component.id);
-		return componentInfo ? componentInfo.content : null;
+		let content = null;
+		if(componentInfo) {
+			content = componentInfo.content || componentInfo.content_en;
+		}
+		return content;
 	}
 
   export let pageDetail;

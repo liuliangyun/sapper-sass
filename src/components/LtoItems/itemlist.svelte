@@ -1,5 +1,6 @@
 <script>
   export let ltoItems = content.ltoItems;
+  export let title = content.title;
 
   import { onMount } from 'svelte';
 
@@ -270,7 +271,7 @@
 </style>
 
 <section class='lto-items wrapper' id='lto-items'>
-  <h2>所有新品</h2>
+  <h2>{title}</h2>
   <div class='grid columns-3 padded-2'>
     {#each ltoItems as item}
       {#if item.url}

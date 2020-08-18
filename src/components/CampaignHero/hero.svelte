@@ -105,10 +105,12 @@
       <img src='{ hero.image_mobile }' alt='' class='img' />
     </div>
   {/if}
-  <div class='wrapper'>
-    <h2>{ hero.title }</h2>
-    <p class='text description'>    
-      {@html hero.article }
-    </p>
-  </div>
+  {#if hero.title && hero.article}
+    <div class='wrapper'>
+      <h2>{ hero.title }</h2>
+      <p class='text description'>    
+        {@html hero.article }
+      </p>
+    </div>
+  {/if}
 </section>

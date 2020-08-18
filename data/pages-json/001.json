@@ -12,9 +12,9 @@
     ],
     "components": [
       {
-        "id": "campaign-hero",
+        "id": "web-campaign-hero",
         "content": {
-          "id": "campaign-hero",
+          "id": "web-campaign-hero",
           "hero": {
             "url": "#lto-items",
             "image_desktop": "https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/SUM3-KV-BEV.jpg",
@@ -22,12 +22,13 @@
             "title": "茶做的云 轻轻放纵",
             "article": "星巴克茶云乌龙系列清新上市。<br>精选特级高山乌龙，新鲜调制甘醇乌龙茶汤，<br>千次搅打成“云”，茶云绵密细腻，<br>零脂*不含奶，清爽宜人。<br>细密茶云包裹甘甜水果果汁与甜脆果丁，<br>茶韵果香在味蕾缓缓释放，美妙口感，轻轻放纵。<br><br><small>*参考GB28050-2011《食品安全国家标准 预包装食品营养标签通则》</small>"
           }
-        }
+        },
+        "content_en": null
       },
       {
-        "id": "featured-items",
+        "id": "web-featured-items",
         "content": {
-          "id": "featured-items",
+          "id": "web-featured-items",
           "featuredItems": [
             {
               "title": "轻盈夏日甜点",
@@ -65,12 +66,14 @@
               "article": "这个夏天我们为你臻选来自阳光地带的热情咖啡豆<br>卢旺达阿巴坤达卡瓦咖啡豆，<br>具有柑橘般的酸甜风味，并伴有全麦饼干和牛轧糖般的香醇<br>哥斯达黎加蜜处理咖啡豆，<br>拥有红苹果般的柔和香气，伴随着李子干和甘蔗般的甜感<br>卢旺达穆洪多咖啡豆具有可可粉和红糖般的风味，<br>伴有麦芽般的底韵，口感平衡。"
             }
           ]
-        }
+        },
+        "content_en": null
       },
       {
-        "id": "lto-items",
+        "id": "web-lto-items",
         "content": {
-          "id": "lto-items",
+          "id": "web-lto-items",
+          "title": "所有新品",
           "ltoItems": [
             {
               "image_desktop": "https://www-static.chinacdn.stg.starbucks.com.cn/assets/images/featured/2020summer3/small-pics/1.jpg",
@@ -138,7 +141,8 @@
               "name": "活力夏日会员星礼包"
             }
           ]
-        }
+        },
+        "content_en": null
       }
     ],
     "status": "draft",

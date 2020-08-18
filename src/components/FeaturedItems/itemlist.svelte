@@ -184,22 +184,26 @@
         <a href='{ item.url }' class='block relative'>
           <img src='{ item.image_desktop }' alt='' class='img' />
         </a>
-        <div class='description text wrapper'>
-          <h2>{ item.title }</h2>
-          <p>{@html item.article }</p>
-        </div>
+        {#if item.title && item.article}
+          <div class='description text wrapper'>
+            <h2>{ item.title }</h2>
+            <p>{@html item.article }</p>
+          </div>
+        {/if}
       </div>
       <div class='show-mobile tablet-hidden'>
         <a href='{ item.url }' class='block relative'>
           <img src='{ item.image_mobile }' alt='' class='img' />
         </a>
-        <div class='description text wrapper featured-collapsible collapsed'>
-          <h2>{ item.title }</h2>
-          <div class='body'>
-            <p>{@html item.article }</p>
+        {#if item.title && item.article}
+          <div class='description text wrapper featured-collapsible collapsed'>
+            <h2>{ item.title }</h2>
+            <div class='body'>
+              <p>{@html item.article }</p>
+            </div>
+            <span class='icon'></span>
           </div>
-          <span class='icon'></span>
-        </div>
+        {/if}
       </div>
     </div>
   {/each}

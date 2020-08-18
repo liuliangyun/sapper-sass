@@ -3,9 +3,9 @@ import FeaturedItems from '../../components/FeaturedItems/itemlist.svelte';
 import LtoItems from '../../components/LtoItems/itemlist.svelte';
 
 export const COMPONENT__ID_MAPPER = {
-  "campaign-hero": CampaignHero,
-  "featured-items": FeaturedItems,
-  "lto-items": LtoItems
+  "web-campaign-hero": CampaignHero,
+  "web-featured-items": FeaturedItems,
+  "web-lto-items": LtoItems
 };
 
 export function validateComponentId(componentId) {
