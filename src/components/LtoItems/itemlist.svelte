@@ -1,5 +1,5 @@
 <script>
-  export let ltoItems;
+  export let ltoItems = content.ltoItems;
 
   import { onMount } from 'svelte';
 

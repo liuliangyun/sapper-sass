@@ -1,32 +1,26 @@
 <script>
   import { COMPONENT__ID_MAPPER, validateComponentId } from "./component";
 
-  export function renderByComponent(component, context) {
-    let componentInfo = context.components.find((c) => c.id === component.id);
+  export function validateComponent(component) {
     if (!validateComponentId(component.id)) {
       throw new Error(
         `Page find component: ${component.id} error, Pls check page data. PageId: [${context.id}]`
       );
-    }
-    return COMPONENT__ID_MAPPER[component.id](componentInfo ? componentInfo.content : null, context);
-  }
+		}
+    return true;
+	}
+	
+	export function getComponentProps(component, context) {
+		let componentInfo = context.components.find((c) => c.id === component.id);
+		return componentInfo ? componentInfo.content : null;
+	}
 
   export let pageDetail;
 </script>
 
 <style lang="scss">
-  @import './scss/main.scss';
-	:global(body) {
-		font-family: "Gotham", Helvetica, Arial, PingFangSC-Regular, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-		font-size: 16px;
-		font-size: 1.6rem;
-		font-weight: normal;
-		line-height: 1.6; 
-		background: rgb(247,247,247);
-		color: rgba(0, 0, 0, 0.87);
-		-webkit-font-smoothing: antialiased;
-		letter-spacing: 0.4px;
-	}
+	@import './scss/main.scss';
+	
 	#content {
 		position: relative;
 		overflow: hidden;
@@ -90,7 +84,11 @@
 </style>
 
 <section id='content'>
-  {#each pageDetail.components as component}
-    <div key={component.id}>{renderByComponent(component, pageDetail)}</div>
+	{#each pageDetail.components as component}
+		{#if validateComponent(component)}
+			<div key={component.id}>
+				<svelte:component this={COMPONENT__ID_MAPPER[component.id]} {...getComponentProps(component, pageDetail)}/>
+			</div>
+		{/if}
   {/each}
 </section>

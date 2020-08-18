@@ -1,5 +1,5 @@
 <script>
-  export let featuredItems;
+  export let featuredItems = content.featuredItems;
 
   import { onMount } from 'svelte';
 

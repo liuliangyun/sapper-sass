@@ -7,6 +7,7 @@ import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import sveltePreprocess from 'svelte-preprocess';
 import pkg from './package.json';
+import builtins from 'rollup-plugin-node-builtins';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -46,6 +47,9 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
+      builtins( {
+        fs: true
+      } ),
 
       legacy &&
         babel({
@@ -98,6 +102,9 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
+      builtins( {
+        fs: true
+      } ),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules ||

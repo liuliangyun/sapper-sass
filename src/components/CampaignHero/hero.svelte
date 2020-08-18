@@ -1,5 +1,5 @@
 <script>
-  export let hero;
+  export let hero = content.hero;
 </script>
 
 <style lang="scss">
